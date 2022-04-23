@@ -3,12 +3,12 @@
 //Output:0x6B, 0x65, 0x6E, 0x73
 
 var fg = "";
+Console.SetIn(new StreamReader(Console.OpenStandardInput(),Console.InputEncoding,false,bufferSize: 65535));
+
 myfunc();
 
 void myfunc()
 {
-    Console.WriteLine("Input  : string byte array (e.g.  6B 65 6E 73 or 6B656E73);");
-    Console.WriteLine("Output : byte array;");
     fg = Console.ReadLine();
     fg = fg.Replace(" ", "");
     var list = new List<byte>();
@@ -29,6 +29,8 @@ void myfunc()
         }
     }
 
+    Console.Clear();
     Console.WriteLine(res);
+
     myfunc();
 }
